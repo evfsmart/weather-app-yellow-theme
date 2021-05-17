@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App 🌤</title>
+</head>
+<body>
+    <div class="root"><!--background whole page-->
+    <div class="container">
+        <div class="weather-app-wrapper"><!--app unit rounded corners white box-->
+            <div class="weather-app">
+                <div class="header">
+                    <a href="https://www.shecodes.io" target="_blank"> 
+                        <img src="img/cloudandsun.svg" class="headerImg" alt="header image of sun and cloud"></a>
+                    <a href="https://openweathermap.org/" target="_blank">    
+                        <img src="img/snowflake.svg" class="headerImg" alt="header image of snowflake"></a>
+                        <img src="img/sun.svg" class="headerImg" alt="header image of sun">
+                        <img src="img/lightning.svg" class="headerImg" alt="header image of lightning">
+                        <img src="img/raincloud.svg" class="headerImg" alt="header image of raincloud">
+                        <img src="img/cloudsandsun.svg" class="headerImg" alt="header image of sun and clouds">
+                        <img src="img/windcloud.svg" class="headerImg" alt="header image of wind">
+                </div>
+            <form id="search-form" class="mb-3 mt-3">
+                <div class="row">
+                    <div class="col-9">
+                        <input 
+                        type="search" 
+                        placeholder="Enter a city..." 
+                        class="form-control search-input"
+                        id="city-input"
+                        autocomplete="off">
+                    </div>
+                    <div class="col-3 ">
+                        <input 
+                        type="submit" 
+                        class="btn btn-primary w-100" 
+                        value="Search">
+                    </div>
+                </div>
+            </form>
+        <hr />
+
+            <div class="row">
+                <div class="col-6 city-and-details">
+                    <h1 id="city"></h1>
+                    <ul>
+                        <li>Last updated: <span id="date-and-updated"></span></li> 
+                        <li><span id="description"></span></li>
+                    </ul>
+                </div>
+                <div class="col-6 big-image-and-temperature">
+                    <div class="temperature-container d-flex justify-content-end">
+                        <img src="" alt="" id = "icon" class="temperature-img">
+                        <div>
+                            <span class="temperature" id="temperature"></span>
+                            <span class="unit">
+                                <a href="#" id="celsius-link" class="active">°C</a> <span class="pipe">|</span>
+                                <a href="#" id="fahrenheit-link">°F</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="humidity-and-wind">Humidity: <strong><span id="humidity"></span>%</strong>, Wind: <strong><span id="wind"></span> km/h</strong></div>
+
+                </div>
+
+        <!-- <div class="WeatherForecast row">
+            <div class="col">
+                <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Wed</div>
+                    <img src="img/cloudandsun.svg" alt="forecast image" class="forecast-img">
+                        <div class="forecast-temperature">
+                            <span class="forecast-temperature-max">20°</span>
+                            <span class="forecast-temperature-min">10°</span>
+                        </div>
+                </div>
+               </div>
+                <div class="col">                
+                    <div class="WeatherForecastPreview">
+                        <div class="forecast-time">Thu</div>
+                             <img src="img/sun.svg" alt="forecast image" class="forecast-img">
+                            <div class="forecast-temperature">
+                            <span class="forecast-temperature-max">22°</span>
+                            <span class="forecast-temperature-min">12°</span>
+                            </div>
+                        </div>
+                    </div>
+            <div class="col">
+                <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Fri</div>
+                    <img src="img/cloudsandsun.svg" alt="forecast image" class="forecast-img">
+                        <div class="forecast-temperature">
+                            <span class="forecast-temperature-max">20°</span>
+                            <span class="forecast-temperature-min">10°</span>
+                        </div>
+                   </div>
+                </div>
+            <div class="col">
+                <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Sat</div>
+                    <img src="img/cloudandsun.svg" alt="forecast image" class="forecast-img">
+                        <div class="forecast-temperature">
+                            <span class="forecast-temperature-max">20°</span>
+                            <span class="forecast-temperature-min">10°</span>
+                        </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Sun</div>
+                    <img src="img/raincloud.svg" alt="forecast image" class="forecast-img">
+                        <div class="forecast-temperature">
+                            <span class="forecast-temperature-max">20°</span>
+                            <span class="forecast-temperature-min">10°</span>
+                        </div>
+                </div>
+            </div>
+        </div> -->
+       <hr />
+        <footer>This project was coded by <a href="https://www.shecodes.io" target="_blank" rel="noopener noreferrer">SheCodes</a>
+            and is <a href="https://github.com/evfsmart/vanilla-weather-app" target="_blank" rel="noopener noreferrer">open-sourced on GitHub</a>
+            and <a href="https://app.netlify.com/sites/lucid-shockley-3c0d7e/overview" target="_blank" rel="noopener noreferrer">hosted on Netlify</a>
+        </footer>
+     </div>
+    </div>
+</div>
+</div>
+<script src="src/app.js"></script>
+</body>
+</html>
