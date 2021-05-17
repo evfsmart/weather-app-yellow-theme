@@ -14,7 +14,8 @@ function formatDate(timestamp) {
 }
 // timestamp = miliseconds since Monday January 19th 1970//
 
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data.daily);
 let forecastElement = document.querySelector("#forecast");
 
 let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -36,6 +37,13 @@ forecastHTML = forecastHTML + `
         forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+    let apiKey = "17a639a638a4bfe25417abb69ec4868d";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
 let cityElement = document.querySelector("#city");
 let dateAndUpdatedElement = document.querySelector("#date-and-updated");
@@ -55,6 +63,9 @@ iconElement.setAttribute("alt", response.data.weather[0].description);
 humidityElement.innerHTML = response.data.main.humidity;
 temperatureElement.innerHTML = Math.round(response.data.main.temp);
 windElement.innerHTML = Math.round(response.data.wind.speed);
+
+getForecast (response.data.coord);
+
 }
 
 function search(city) {
@@ -99,4 +110,3 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("New York");
 
-displayForecast();
