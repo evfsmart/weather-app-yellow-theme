@@ -56,7 +56,7 @@ strong {
 
 .header {
     background-color: #fff6e6;
-    border-radius: 16px;
+    border-radius: 8px;
     display: flex;
     justify-content: space-around;
 }
@@ -89,7 +89,7 @@ strong {
 .weather-app {
     font-family: Cerebri-Sans,Helvetica,Arial,sans-serif;
     background: #fff;
-    border-radius: 16px;
+    border-radius: 8px;
     box-sizing: border-box;
     box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
     padding: 40px;
@@ -133,7 +133,7 @@ strong {
 }
 
 .weather-app footer {
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 0px;
     line-height: 18px;
     text-align: center;
@@ -165,7 +165,7 @@ strong {
     border: none;
     padding: 15px 20px;
     display: inline-block;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 16px;
     font-weight: 400;
     height: 50px;
